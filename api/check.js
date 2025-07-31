@@ -1,31 +1,25 @@
 export default async function handler(req, res) {
-  // ✅ CORS headers (very important)
-  res.setHeader("Access-Control-Allow-Credentials", true);
-  res.setHeader("Access-Control-Allow-Origin", "https://mondrop-frontend.vercel.app");
-  res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-CSRF-Token, X-Requested-With, Accept, Content-Type, Authorization"
-  );
+  res.setHeader("Access-Control-Allow-Origin", "*"); // CORS allow
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  // ✅ OPTIONS request handling (for preflight)
   if (req.method === "OPTIONS") {
     res.status(200).end();
     return;
   }
 
-  // ✅ Main logic
   const { address } = req.query;
 
   if (!address) {
-    return res.status(400).json({ error: "Wallet address missing" });
+    return res.status(400).json({ error: "Wallet address is required" });
   }
 
-  // 👉 (Abhi ke liye dummy eligibility, baad me real logic daal denge)
+  // Dummy data - baad me actual logic.js se connect karo
   return res.status(200).json({
-    address,
     eligible: true,
-    tier: "Tier 1 (OG User)",
-    reason: "Met all airdrop criteria",
+    tier: "OG",
+    reward: 2000,
+    reason: "All criteria met.",
+    sybil: false
   });
 }
