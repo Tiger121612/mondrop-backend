@@ -1,8 +1,6 @@
 {
   "name": "mondrop-backend",
   "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vercel dev"
-  }
+  "main": "index.js",
+  "type": "module"
 }
