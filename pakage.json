@@ -1,13 +1,21 @@
 {
   "name": "mondrop-backend",
   "version": "1.0.0",
+  "description": "Mondrop eligibility and Sybil detection backend for Monad",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
+  "keywords": ["monad", "airdrop", "backend", "sybil", "eligibility"],
+  "author": "Prashant Kumar Kumud",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }
