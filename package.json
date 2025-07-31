@@ -2,5 +2,12 @@
   "name": "mondrop-backend",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.4.0"
+  }
 }
